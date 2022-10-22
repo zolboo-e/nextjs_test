@@ -10,7 +10,7 @@ const nextConfig = {
       fallback: [
         {
           source: "/:path*",
-          destination: `${process.env.NUXT_URL}/:path*`,
+          destination: `${process.env.NEXT_PUBLIC_NUXT_URL}/:path*`,
         },
       ],
     };
