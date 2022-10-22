@@ -2,7 +2,7 @@
 import "tailwindcss/tailwind.css";
 
 //
-import { UserProvider } from "@auth0/nextjs-auth0";
+import { UserProvider, useUser } from "@auth0/nextjs-auth0";
 import type { AppProps } from "next/app";
 import Link from "next/link";
 
@@ -25,6 +25,8 @@ const AppWrapper: React.FCC = ({ children }) => {
 };
 
 const Layout: React.FCC = ({ children }) => {
+  const { user } = useUser();
+
   return (
     <div className="h-screen w-screen grid grid-cols-[80px,1fr] grid-rows-[70px,1fr]">
       <div className="bg-[#C62F37] flex justify-center items-center">
@@ -32,8 +34,14 @@ const Layout: React.FCC = ({ children }) => {
           GTN
         </div>
       </div>
-      <div className="bg-blue-400">Header</div>
-      <ul className="bg-primary row-start-2 text-white">
+      <div className="bg-blue-400">
+        {!user && (
+          <div>
+            <a href="/api/auth/login">Login</a>
+          </div>
+        )}
+      </div>
+      <ul className="bg-primary row-start-2 text-white relative">
         <li>
           <Link href="/">
             <a className="w-full aspect-square flex justify-center items-center hover:bg-white/10">
@@ -62,6 +70,17 @@ const Layout: React.FCC = ({ children }) => {
             </a>
           </Link>
         </li>
+        {user && (
+          <li>
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+            <a
+              className="absolute bottom-0 w-full aspect-square flex justify-center items-center hover:bg-white/10"
+              href="/api/auth/logout"
+            >
+              Logout
+            </a>
+          </li>
+        )}
       </ul>
 
       {children}
