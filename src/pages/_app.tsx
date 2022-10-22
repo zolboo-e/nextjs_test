@@ -37,6 +37,7 @@ const Layout: React.FCC = ({ children }) => {
       <div className="bg-blue-400">
         {!user && (
           <div>
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <a href="/api/auth/login">Login</a>
           </div>
         )}
