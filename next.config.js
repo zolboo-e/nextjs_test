@@ -10,8 +10,7 @@ const nextConfig = {
       fallback: [
         {
           source: "/:path*",
-          destination: "https://nuxtjs-test-nine-iota.vercel.app/:path*",
-          // destination: "http://192.168.1.42:3000/:path*",
+          destination: `${process.env.NUXT_URL}/:path*`,
         },
       ],
     };
