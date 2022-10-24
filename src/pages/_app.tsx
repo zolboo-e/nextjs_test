@@ -25,7 +25,7 @@ const AppWrapper: React.FCC = ({ children }) => {
 };
 
 const Layout: React.FCC = ({ children }) => {
-  const { user } = useUser();
+  const { user, isLoading } = useUser();
 
   return (
     <div className="h-screen w-screen grid grid-cols-[80px,1fr] grid-rows-[70px,1fr]">
@@ -35,7 +35,7 @@ const Layout: React.FCC = ({ children }) => {
         </div>
       </div>
       <div className="bg-blue-400">
-        {!user && (
+        {!isLoading && !user && (
           <div>
             {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <a href="/api/auth/login">Login</a>
@@ -71,7 +71,7 @@ const Layout: React.FCC = ({ children }) => {
             </a>
           </Link>
         </li>
-        {user && (
+        {!isLoading && user && (
           <li>
             {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <a
