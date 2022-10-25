@@ -31,7 +31,7 @@ const SettingsPage: NextPageWithLayout = () => {
       <div className="flex flex-col gap-y-10">
         {items.map(({ key, children, title }) => (
           <div key={key} className="flex flex-col gap-y-4">
-            <h1 className="text-lg font-bold">{`アプリ用のコンテンツ管理`}</h1>
+            <h1 className="text-lg font-bold">{title}</h1>
             <ul className="flex flex-col gap-y-2">
               {children.map(({ key, href, title }) => (
                 <li key={key}>
