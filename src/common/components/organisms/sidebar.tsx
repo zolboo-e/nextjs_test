@@ -1,5 +1,10 @@
 //
-import { ChatBubbleLeftRightIcon } from "@heroicons/react/24/solid";
+import {
+  BuildingOffice2Icon,
+  ChatBubbleLeftRightIcon,
+  Cog6ToothIcon,
+  UserGroupIcon,
+} from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,7 +21,7 @@ export const Sidebar: React.FC = () => {
       </div>
       <div className="row-start-2 h-full bg-primary">
         <ul>
-          {items.map(({ key, href, title }) => (
+          {items.map(({ key, href, icon, title }) => (
             <li key={key}>
               <Link href={href}>
                 <a
@@ -26,7 +31,7 @@ export const Sidebar: React.FC = () => {
                   )}
                 >
                   <div className="flex aspect-square w-8 items-center justify-center rounded-full bg-white/20">
-                    <ChatBubbleLeftRightIcon className="w-4" />
+                    <div className="w-4">{icon}</div>
                   </div>
                   <div className="text-xs">{title}</div>
                 </a>
@@ -42,26 +47,31 @@ const items = [
   {
     key: "tickets",
     href: "/tickets",
+    icon: <ChatBubbleLeftRightIcon />,
     title: "チケット",
   },
   {
     key: "options",
     href: "/options",
+    icon: <ChatBubbleLeftRightIcon />,
     title: "オプション",
   },
   {
     key: "companies",
     href: "/companies",
+    icon: <BuildingOffice2Icon />,
     title: "法人",
   },
   {
     key: "customers",
     href: "/customers",
+    icon: <UserGroupIcon />,
     title: "ユーザー",
   },
   {
     key: "settings",
     href: "/settings",
+    icon: <Cog6ToothIcon />,
     title: "設定",
   },
 ];
