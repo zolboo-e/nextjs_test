@@ -6,7 +6,7 @@ import { useRef } from "react";
 
 export const Header: React.FC = () => {
   return (
-    <header className="flex items-center justify-between border-b px-20">
+    <header className="flex items-center justify-between border-b bg-white px-20">
       <div className="text-lg font-bold">{`申込管理`}</div>
       <Menu />
     </header>
