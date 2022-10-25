@@ -40,28 +40,23 @@ export const Sidebar: React.FC = () => {
 };
 const items = [
   {
-    key: "applications",
-    href: "/",
-    title: "申込",
-  },
-  {
     key: "tickets",
     href: "/tickets",
-    title: "課題",
+    title: "チケット",
   },
   {
-    key: "setup",
-    href: "/",
-    title: "セットアップ",
+    key: "options",
+    href: "/options",
+    title: "オプション",
   },
   {
     key: "companies",
-    href: "/",
+    href: "/companies",
     title: "法人",
   },
   {
-    key: "users",
-    href: "/",
+    key: "customers",
+    href: "/customers",
     title: "ユーザー",
   },
   {
