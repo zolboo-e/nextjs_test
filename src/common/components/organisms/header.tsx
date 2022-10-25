@@ -7,7 +7,7 @@ import { useRef } from "react";
 export const Header: React.FC = () => {
   return (
     <header className="flex items-center justify-between border-b px-20">
-      <div className="">{`申込管理`}</div>
+      <div className="text-lg font-bold">{`申込管理`}</div>
       <Menu />
     </header>
   );
@@ -24,7 +24,7 @@ export const Menu: React.FC = () => {
   return (
     <div className="dropdown-end dropdown">
       <label className="flex items-center gap-x-3" tabIndex={0} ref={buttonRef}>
-        <div className="text-lg font-bold">{user.nickname}</div>
+        <div>{user.nickname}</div>
         {user.picture && (
           <div className="relative aspect-square w-10">
             <Image
