@@ -2,10 +2,11 @@
 import { NextMiddleware, NextRequest, NextResponse } from "next/server";
 
 export const config = {
-  matcher: ["/((?!api|static|_next|assets|favicon.ico).*)"],
+  matcher: ["/((?!api|static|_next|assets|favicon.ico|_nuxt|__webpack_hmr).*)"],
 };
 const authRoutes: string[] = ["/login"];
 export const middleware: NextMiddleware = async (request) => {
+  console.log("middleware pathname:", request.nextUrl.pathname);
   let response: NextResponse | undefined;
 
   // auth routes
