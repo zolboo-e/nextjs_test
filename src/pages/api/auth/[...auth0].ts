@@ -8,13 +8,17 @@ import {
 
 export default handleAuth({
   async login(req, res) {
+    const returnTo = req.query["returnTo"];
+
     await handleLogin(req, res, {
-      returnTo: "/",
+      returnTo: typeof returnTo === "string" ? returnTo : "/",
     });
   },
   async logout(req, res) {
+    const returnTo = req.query["returnTo"];
+
     await handleLogout(req, res, {
-      returnTo: "/",
+      returnTo: typeof returnTo === "string" ? returnTo : "/",
     });
   },
   async callback(req, res, options) {
