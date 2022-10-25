@@ -24,7 +24,7 @@ export const Menu: React.FC = () => {
   return (
     <div className="dropdown-end dropdown">
       <label className="flex items-center gap-x-3" tabIndex={0} ref={buttonRef}>
-        <div>{user.nickname}</div>
+        <div className="text-lg font-bold">{user.nickname}</div>
         {user.picture && (
           <div className="relative aspect-square w-10">
             <Image
