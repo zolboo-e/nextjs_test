@@ -1,8 +1,12 @@
+//
 import { useUser } from "@auth0/nextjs-auth0";
-import type { NextPage } from "next";
+import type { NextPageWithLayout } from "next";
 import Image from "next/image";
 
-const UserPage: NextPage = () => {
+//
+import { MainLayout } from "common/components";
+
+const SettingsPage: NextPageWithLayout = () => {
   const { user } = useUser();
 
   return (
@@ -10,7 +14,7 @@ const UserPage: NextPage = () => {
       <h1 className="text-red-400">Next User Page</h1>
       {user && (
         <div>
-          <div className="w-[120px] h-[120px] relative">
+          <div className="relative h-[120px] w-[120px]">
             <Image src={user.picture ?? ""} alt="user" layout="fill" />
           </div>
           <h1>{user.email}</h1>
@@ -19,5 +23,7 @@ const UserPage: NextPage = () => {
     </div>
   );
 };
-
-export default UserPage;
+SettingsPage.getLayout = (page) => {
+  return <MainLayout>{page}</MainLayout>;
+};
+export default SettingsPage;

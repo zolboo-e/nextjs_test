@@ -6,7 +6,6 @@ export const config = {
 };
 const authRoutes: string[] = ["/login"];
 export const middleware: NextMiddleware = async (request) => {
-  console.log("middleware pathname:", request.nextUrl.pathname);
   let response: NextResponse | undefined;
 
   // auth routes
