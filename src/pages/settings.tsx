@@ -31,7 +31,12 @@ const SettingsPage: NextPageWithLayout = () => {
             <ul className="flex flex-col gap-y-2">
               {children.map(({ key, external, href, title }) => (
                 <li key={key}>
-                  <Link href={href} target={external ? "_blank" : undefined}>
+                  <Link
+                    href={href}
+                    passHref
+                    rel="noopener noreferrer"
+                    target={external ? "_blank" : undefined}
+                  >
                     <a
                       className={classNames(
                         "flex gap-x-5 border bg-white px-8 py-5",
