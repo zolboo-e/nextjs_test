@@ -29,7 +29,7 @@ const SettingsPage: NextPageWithLayout = () => {
           <div key={key} className="flex flex-col gap-y-4">
             <h1 className="text-lg font-bold">{title}</h1>
             <ul className="flex flex-col gap-y-2">
-              {children.map(({ key, href, title }) => (
+              {children.map(({ key, external, href, title }) => (
                 <li key={key}>
                   <Link href={href}>
                     <a
@@ -37,6 +37,7 @@ const SettingsPage: NextPageWithLayout = () => {
                         "flex gap-x-5 border bg-white px-8 py-5",
                         "hover:bg-black/5"
                       )}
+                      target={external ? "_blank" : undefined}
                     >
                       <ArrowDownTrayIcon className="h-6 w-6 text-primary" />
                       {title}
@@ -60,28 +61,37 @@ SettingsPage.getLayout = (page) => {
 };
 export default SettingsPage;
 
-const items = [
+interface IItem {
+  key: string;
+  title: string;
+  children: { key: string; external?: boolean; href: string; title: string }[];
+}
+const items: IItem[] = [
   {
     key: "contents",
     title: "アプリ用のコンテンツ管理",
     children: [
       {
-        key: "rewards",
+        key: "coupons",
+        external: true,
         href: "https://gtn-article.site/wp-admin/edit.php?post_type=coupon",
         title: "特典管理",
       },
       {
         key: "articles",
+        external: true,
         href: "https://gtn-article.site/wp-admin/edit.php?post_type=article",
         title: "記事管理",
       },
       {
         key: "contents",
+        external: true,
         href: "https://gtn-article.site/wp-admin/edit.php?post_type=contents",
         title: "コンテンツ管理",
       },
       {
-        key: "notifications",
+        key: "news",
+        external: true,
         href: "https://gtn-article.site/wp-admin/edit.php?post_type=news",
         title: "お知らせ管理",
       },
