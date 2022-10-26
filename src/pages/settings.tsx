@@ -31,32 +31,19 @@ const SettingsPage: NextPageWithLayout = () => {
             <ul className="flex flex-col gap-y-2">
               {children.map(({ key, external, href, title }) => (
                 <li key={key}>
-                  {external ? (
+                  <Link href={href} passHref>
                     <a
-                      href={href}
-                      rel="noopener noreferrer"
-                      target="_blank"
                       className={classNames(
                         "flex gap-x-5 border bg-white px-8 py-5",
                         "hover:bg-black/5"
                       )}
+                      rel="noopener noreferrer"
+                      target={external ? "_blank" : undefined}
                     >
                       <ArrowDownTrayIcon className="h-6 w-6 text-primary" />
                       {title}
                     </a>
-                  ) : (
-                    <Link href={href}>
-                      <a
-                        className={classNames(
-                          "flex gap-x-5 border bg-white px-8 py-5",
-                          "hover:bg-black/5"
-                        )}
-                      >
-                        <ArrowDownTrayIcon className="h-6 w-6 text-primary" />
-                        {title}
-                      </a>
-                    </Link>
-                  )}
+                  </Link>
                 </li>
               ))}
             </ul>
