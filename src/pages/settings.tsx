@@ -1,8 +1,6 @@
 //
-import { useUser } from "@auth0/nextjs-auth0";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/solid";
 import type { NextPageWithLayout } from "next";
-import Image from "next/image";
 import Link from "next/link";
 
 //
@@ -10,8 +8,6 @@ import { Breadcrumbs, MainLayout, NarrowTemplate } from "common/components";
 import { classNames } from "common/utils";
 
 const SettingsPage: NextPageWithLayout = () => {
-  const { user } = useUser();
-
   return (
     <div className="flex flex-col gap-y-10">
       <Breadcrumbs
@@ -71,22 +67,22 @@ const items = [
     children: [
       {
         key: "rewards",
-        href: "/",
+        href: "https://gtn-article.site/wp-admin/edit.php?post_type=coupon",
         title: "特典管理",
       },
       {
         key: "articles",
-        href: "/",
+        href: "https://gtn-article.site/wp-admin/edit.php?post_type=article",
         title: "記事管理",
       },
       {
         key: "contents",
-        href: "/",
+        href: "https://gtn-article.site/wp-admin/edit.php?post_type=contents",
         title: "コンテンツ管理",
       },
       {
         key: "notifications",
-        href: "/",
+        href: "https://gtn-article.site/wp-admin/edit.php?post_type=news",
         title: "お知らせ管理",
       },
     ],
@@ -97,28 +93,28 @@ const items = [
     children: [
       {
         key: "teams",
-        href: "/",
+        href: "/settings/teams",
         title: "チーム管理",
       },
       {
-        key: "staffs",
-        href: "/",
+        key: "employees",
+        href: "/settings/employees",
         title: "スタッフ管理",
       },
       {
         key: "plans",
-        href: "/",
+        href: "/settings/plans",
         title: "プラン管理",
       },
     ],
   },
   {
-    key: "account",
+    key: "profile",
     title: "アカウント",
     children: [
       {
-        key: "account",
-        href: "/",
+        key: "profile",
+        href: "/profile",
         title: "アカウント管理",
       },
     ],
