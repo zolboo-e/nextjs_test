@@ -38,12 +38,8 @@ const nextConfig = {
           destination: `${process.env.NUXT_URL}/customers/:path*`,
         },
         {
-          source: "/settings/employees",
-          destination: `${process.env.NUXT_URL}/settings/employees`,
-        },
-        {
-          source: "/settings/plans",
-          destination: `${process.env.NUXT_URL}/settings/plans`,
+          source: "/settings/:path*",
+          destination: `${process.env.NUXT_URL}/settings/:path*`,
         },
         {
           source: "/_nuxt/:path*",

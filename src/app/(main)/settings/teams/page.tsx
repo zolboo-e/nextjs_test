@@ -9,20 +9,24 @@ import { backend } from "configs/default";
 const getData = async (): Promise<any[] | null> => {
   const _cookies = cookies();
   const session = _cookies.get("appSession");
+  console.log("session", session);
   if (!session) {
     return null;
   }
 
   const secret = process.env.AUTH0_SECRET!;
   const { accessToken } = await decrypt(session, secret);
+  console.log("accessToken", accessToken);
 
   const response = await fetch(`${backend.baseUrl}/teams`, {
     headers: {
       authorization: `Bearer ${accessToken}`,
     },
   });
+  const data = await response.json();
+  console.log("data", data);
 
-  return response.json();
+  return data;
 };
 
 async function TeamsPage() {
