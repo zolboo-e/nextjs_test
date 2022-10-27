@@ -3,12 +3,8 @@
 //
 import { Breadcrumbs, Drawer, Header, Sidebar } from "common/components";
 import { classNames } from "common/utils";
-// import { useDrawer } from "common/zustand";
 
 const MainLayout: React.FCC = ({ children }) => {
-  // const isOpen = useDrawer((state) => state.isOpen);
-  // const closeDrawer = useDrawer((state) => state.close);
-
   return (
     <Drawer>
       <div

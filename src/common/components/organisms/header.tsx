@@ -8,7 +8,7 @@ import Link from "next/link";
 // import { useRef } from "react";
 
 //
-import { drawerKey } from "common/components";
+import { drawerId } from "common/components";
 import { classNames } from "common/utils";
 // import { useDrawer } from "common/zustand";
 
@@ -20,7 +20,7 @@ export const Header: React.FC = () => {
       <div className="container">
         <div className="flex items-center gap-x-2.5">
           <label
-            htmlFor={drawerKey}
+            htmlFor={drawerId}
             className={classNames("btn-ghost btn-square btn", "sm:hidden")}
             // onClick={openDrawer}
           >

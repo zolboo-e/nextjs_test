@@ -6,18 +6,19 @@ import Image from "next/image";
 import Link from "next/link";
 
 //
+// import { CloseDrawer } from "common/components";
 import { classNames } from "common/utils";
 
 //
 import { items } from "./sidebar";
 
-export const drawerKey = "my-drawer";
+export const drawerId = "my-drawer";
 export const Drawer: React.FCC = ({ children }) => {
   // const { user } = useUser();
 
   return (
     <div className="drawer">
-      <input id={drawerKey} type="checkbox" className="drawer-toggle" />
+      <input id={drawerId} type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">{children}</div>
       <div className="drawer-side">
         <DrawerMenu />

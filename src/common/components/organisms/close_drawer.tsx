@@ -4,18 +4,19 @@
 import { useCallback, useEffect, useState } from "react";
 
 //
-import { useDrawer } from "common/zustand";
+import { drawerId } from "common/components";
 
 export const CloseDrawer: React.FC = () => {
-  const closeDrawer = useDrawer((state) => state.close);
-
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const handleResize = useCallback(() => {
     if (windowWidth < 640 && window.innerWidth >= 640) {
-      closeDrawer();
+      const element = document.getElementById(drawerId);
+      if (element instanceof HTMLInputElement) {
+        element.checked = false;
+      }
     }
     setWindowWidth(window.innerWidth);
-  }, [closeDrawer, windowWidth]);
+  }, [windowWidth]);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);

@@ -1,5 +1,5 @@
 export { CloseDrawer } from "./close_drawer";
 export { CustomUserProvider } from "./custom_user_provider";
-export { Drawer, drawerKey } from "./drawer";
+export { Drawer, drawerId } from "./drawer";
 export { Header } from "./header";
 export { Sidebar } from "./sidebar";
