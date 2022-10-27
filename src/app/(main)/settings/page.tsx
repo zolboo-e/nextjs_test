@@ -1,6 +1,5 @@
 //
 import { ArrowDownTrayIcon } from "@heroicons/react/24/solid";
-import type { NextPage } from "next";
 import Link from "next/link";
 
 //
@@ -8,30 +7,32 @@ import { classNames } from "common/utils";
 
 function SettingsPage() {
   return (
-    <div className="flex flex-col gap-y-10">
-      {items.map(({ key, children, title }) => (
-        <div key={key} className="flex flex-col gap-y-4">
-          <h1 className="text-lg font-bold">{title}</h1>
-          <ul className="flex flex-col gap-y-2">
-            {children.map(({ key, external, href, title }) => (
-              <li key={key}>
-                <Link
-                  href={href}
-                  className={classNames(
-                    "flex gap-x-5 border bg-white px-8 py-5",
-                    "hover:bg-black/5"
-                  )}
-                  rel="noopener noreferrer"
-                  target={external ? "_blank" : undefined}
-                >
-                  <ArrowDownTrayIcon className="h-6 w-6 text-primary" />
-                  {title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+    <div className="mx-auto max-w-[800px] px-0">
+      <div className="flex flex-col gap-y-10">
+        {items.map(({ key, children, title }) => (
+          <div key={key} className="flex flex-col gap-y-4">
+            <h1 className="text-lg font-bold">{title}</h1>
+            <ul className="flex flex-col gap-y-2">
+              {children.map(({ key, external, href, title }) => (
+                <li key={key}>
+                  <Link
+                    href={href}
+                    className={classNames(
+                      "flex gap-x-5 border bg-white px-8 py-5",
+                      "hover:bg-black/5"
+                    )}
+                    rel="noopener noreferrer"
+                    target={external ? "_blank" : undefined}
+                  >
+                    <ArrowDownTrayIcon className="h-6 w-6 text-primary" />
+                    {title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
