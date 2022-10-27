@@ -7,7 +7,7 @@ import { classNames } from "common/utils";
 
 function SettingsPage() {
   return (
-    <div className="mx-auto max-w-[800px] px-0">
+    <div className="mx-auto max-w-[800px]">
       <div className="flex flex-col gap-y-10">
         {items.map(({ key, children, title }) => (
           <div key={key} className="flex flex-col gap-y-4">

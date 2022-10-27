@@ -65,6 +65,12 @@ const segmentToText = (segment: string) => {
         href: "/settings",
         title: "設定",
       };
+    case "teams":
+      return {
+        key: "teams",
+        href: "/settings/teams",
+        title: "チーム",
+      };
   }
 
   return null;
