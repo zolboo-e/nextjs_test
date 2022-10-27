@@ -18,9 +18,10 @@ const getData = async (): Promise<any[] | null> => {
   const { accessToken } = await decrypt(session, secret);
   console.log("accessToken", accessToken);
 
-  const response = await fetch(`${backend.baseUrl}/teams`, {
+  const response = await fetch(`https://api.gtnapp.tokyo/teams`, {
     headers: {
       authorization: `Bearer ${accessToken}`,
+      "X-API-KEY": "8D-E.dZs7xccC4",
     },
   });
   const data = await response.json();
