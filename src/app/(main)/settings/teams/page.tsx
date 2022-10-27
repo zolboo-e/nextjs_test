@@ -56,16 +56,20 @@ async function TeamsPage() {
             "[&>*>td]:py-4 [&>*>td]:px-8 [&>*>td:first-child]:whitespace-nowrap"
           )}
         >
-          <tr className="border bg-[#eeeeee]">
-            <th>{`チーム名`}</th>
-            <th>{`所属数`}</th>
-          </tr>
-          {data.teams.map(({ id, name, members_count }) => (
-            <tr key={id} className="border bg-white">
-              <td>{name}</td>
-              <td>{`${members_count}人`}</td>
+          <thead>
+            <tr className="border bg-[#eeeeee]">
+              <th>{`チーム名`}</th>
+              <th>{`所属数`}</th>
             </tr>
-          ))}
+          </thead>
+          <tbody>
+            {data.teams.map(({ id, name, members_count }) => (
+              <tr key={id} className="border bg-white">
+                <td>{name}</td>
+                <td>{`${members_count}人`}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     </div>
