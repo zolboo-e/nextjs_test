@@ -2,7 +2,9 @@
 import { NextMiddleware, NextRequest, NextResponse } from "next/server";
 
 export const config = {
-  matcher: ["/((?!api|static|_next|assets|favicon.ico|_nuxt|__webpack_hmr).*)"],
+  matcher: [
+    "/((?!api|static|_next|assets|favicon.ico|_nuxt|__webpack_hmr|_loading).*)",
+  ],
 };
 const authRoutes: string[] = ["/login"];
 export const middleware: NextMiddleware = async (request) => {

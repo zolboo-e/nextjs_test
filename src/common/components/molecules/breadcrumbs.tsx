@@ -1,4 +1,25 @@
+import { classNames } from "common/utils";
 import Link from "next/link";
+import { useSelectedLayoutSegments } from "next/navigation";
+
+export const Breadcrumbs: React.FC = () => {
+  const segments = useSelectedLayoutSegments();
+
+  return (
+    <div
+      className={classNames(
+        "container px-0",
+        segments.includes("(narrow)") && "max-w-[800px]"
+      )}
+    >
+      <_Breadcrumbs
+        items={segments
+          .map(segmentToText)
+          .filter((segment): segment is IBreadcrumbItem => !!segment)}
+      />
+    </div>
+  );
+};
 
 interface IBreadcrumbItem {
   key: string;
@@ -8,7 +29,7 @@ interface IBreadcrumbItem {
 interface IBreadcrumbs {
   items: IBreadcrumbItem[];
 }
-export const Breadcrumbs: React.FC<IBreadcrumbs> = ({ items }) => {
+const _Breadcrumbs: React.FC<IBreadcrumbs> = ({ items }) => {
   return (
     <div className="breadcrumbs text-sm">
       <ul className="text-[10px] font-bold">
@@ -19,13 +40,30 @@ export const Breadcrumbs: React.FC<IBreadcrumbs> = ({ items }) => {
 
           return (
             <li key={key}>
-              <Link href={href}>
-                <a>{title}</a>
-              </Link>
+              <Link href={href}>{title}</Link>
             </li>
           );
         })}
       </ul>
     </div>
   );
+};
+
+const segmentToText = (segment: string) => {
+  switch (segment) {
+    case "(narrow)":
+      return {
+        key: "root",
+        href: "/",
+        title: "ホーム",
+      };
+    case "settings":
+      return {
+        key: "settings",
+        href: "/settings",
+        title: "設定",
+      };
+  }
+
+  return null;
 };

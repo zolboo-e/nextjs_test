@@ -2,11 +2,18 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    container: {
+      center: true,
+      padding: "20px",
+    },
+    extend: {
+      transitionProperty: {
+        width: "width",
+        margin: "margin",
+      },
+    },
   },
-  plugins: [
-    require("daisyui"),
-  ],
+  plugins: [require("daisyui")],
   daisyui: {
     themes: [
       {
