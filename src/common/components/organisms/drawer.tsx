@@ -1,4 +1,5 @@
 //
+// import { useUser } from "@auth0/nextjs-auth0";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,10 +9,9 @@ import { useDrawer } from "common/zustand";
 
 //
 import { items } from "./sidebar";
-import { useUser } from "@auth0/nextjs-auth0";
 
 export const Drawer: React.FC = () => {
-  const { user } = useUser();
+  // const { user } = useUser();
   const isOpen = useDrawer((state) => state.isOpen);
 
   return (
@@ -50,7 +50,7 @@ export const Drawer: React.FC = () => {
           </li>
         ))}
       </ul>
-      {user && (
+      {/* {user && (
         <div className="flex flex-col gap-y-2.5 px-5">
           <small className="text-white">{`その他`}</small>
           <div
@@ -71,7 +71,7 @@ export const Drawer: React.FC = () => {
           href="/api/auth/logout"
           className={classNames("px-5 py-2.5 text-white", "hover:bg-black/20")}
         >{`ログアウト`}</Link>
-      )}
+      )} */}
     </div>
   );
 };

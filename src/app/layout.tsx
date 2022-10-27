@@ -1,9 +1,8 @@
-"use client";
 //
 import "tailwindcss/tailwind.css";
 
 //
-import { UserProvider } from "@auth0/nextjs-auth0";
+// import { UserProvider } from "@auth0/nextjs-auth0";
 
 const RootLayout: React.FCC = ({ children }) => {
   return (
@@ -12,7 +11,8 @@ const RootLayout: React.FCC = ({ children }) => {
         <title>Next.js</title>
       </head>
       <body>
-        <UserProvider>{children}</UserProvider>
+        {children}
+        {/* <UserProvider>{children}</UserProvider> */}
       </body>
     </html>
   );
