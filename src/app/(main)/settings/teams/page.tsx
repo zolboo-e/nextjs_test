@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 
 //
 import { decrypt } from "common/utils";
-import { backend } from "configs/default";
+import { auth0, backend } from "configs/default";
 
 const getData = async (): Promise<{
   teams: {
@@ -22,13 +22,12 @@ const getData = async (): Promise<{
     return null;
   }
 
-  const secret = process.env.AUTH0_SECRET!;
-  const { accessToken } = await decrypt(session, secret);
+  const { accessToken } = await decrypt(session, auth0.secret);
 
-  const response = await fetch(`https://api.gtnapp.tokyo/teams`, {
+  const response = await fetch(`${backend.baseUrl}/teams`, {
     headers: {
       authorization: `Bearer ${accessToken}`,
-      "X-API-KEY": "8D-E.dZs7xccC4",
+      "X-API-KEY": backend.apiKey,
     },
   });
 
