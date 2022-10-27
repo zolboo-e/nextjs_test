@@ -1,24 +1,27 @@
+// "use client";
+
 //
 // import { useUser } from "@auth0/nextjs-auth0";
 import Image from "next/image";
 import Link from "next/link";
 
 //
+import { CloseDrawer } from "common/components";
 import { classNames } from "common/utils";
-import { useDrawer } from "common/zustand";
+// import { useDrawer } from "common/zustand";
 
 //
 import { items } from "./sidebar";
 
 export const Drawer: React.FC = () => {
   // const { user } = useUser();
-  const isOpen = useDrawer((state) => state.isOpen);
+  // const isOpen = useDrawer((state) => state.isOpen);
 
   return (
     <div
       className={classNames(
-        "fixed z-0 -ml-[80vw] flex h-screen w-[80vw] flex-col bg-primary py-5 transition-margin duration-200",
-        isOpen && "ml-0"
+        "fixed z-0 -ml-[80vw] flex h-screen w-[80vw] flex-col bg-primary py-5 transition-margin duration-200"
+        // isOpen && "ml-0"
       )}
     >
       <div className="flex items-center gap-x-2.5 px-2.5">
@@ -72,6 +75,7 @@ export const Drawer: React.FC = () => {
           className={classNames("px-5 py-2.5 text-white", "hover:bg-black/20")}
         >{`ログアウト`}</Link>
       )} */}
+      {/* <CloseDrawer /> */}
     </div>
   );
 };

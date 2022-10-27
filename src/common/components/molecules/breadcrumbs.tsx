@@ -1,3 +1,5 @@
+"use client";
+
 import { classNames } from "common/utils";
 import Link from "next/link";
 import { useSelectedLayoutSegments } from "next/navigation";

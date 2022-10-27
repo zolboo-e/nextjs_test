@@ -11,12 +11,14 @@
   "dependencies": {
     "@auth0/nextjs-auth0": "^1.9.2",
     "@heroicons/react": "^2.0.12",
+    "client-only": "^0.0.1",
     "daisyui": "^2.33.0",
     "futoin-hkdf": "^1.5.1",
     "jose": "^4.10.3",
     "next": "^13.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "server-only": "^0.0.1",
     "sharp": "^0.31.1",
     "zustand": "^4.1.3"
   },

@@ -1,1 +1,1 @@
-export { CloseDrawerOnMobile, useDrawer } from "./drawer";
+export { useDrawer } from "./drawer";

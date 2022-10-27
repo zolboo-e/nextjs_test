@@ -2,7 +2,7 @@
 import "tailwindcss/tailwind.css";
 
 //
-// import { UserProvider } from "@auth0/nextjs-auth0";
+// import { CustomUserProvider } from "common/components";
 
 const RootLayout: React.FCC = ({ children }) => {
   return (
@@ -12,7 +12,7 @@ const RootLayout: React.FCC = ({ children }) => {
       </head>
       <body>
         {children}
-        {/* <UserProvider>{children}</UserProvider> */}
+        {/* <CustomUserProvider>{children}</CustomUserProvider> */}
       </body>
     </html>
   );

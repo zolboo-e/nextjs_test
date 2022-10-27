@@ -1,3 +1,5 @@
+// "use client"
+
 //
 // import { useUser } from "@auth0/nextjs-auth0";
 import { Bars3Icon, ChevronDownIcon } from "@heroicons/react/24/solid";
@@ -7,10 +9,10 @@ import Link from "next/link";
 
 //
 import { classNames } from "common/utils";
-import { useDrawer } from "common/zustand";
+// import { useDrawer } from "common/zustand";
 
 export const Header: React.FC = () => {
-  const openDrawer = useDrawer((state) => state.open);
+  // const openDrawer = useDrawer((state) => state.open);
 
   return (
     <header className="flex items-center justify-between border-b bg-white">
@@ -18,7 +20,7 @@ export const Header: React.FC = () => {
         <div className="flex items-center gap-x-2.5">
           <button
             className={classNames("btn-ghost btn-square btn", "sm:hidden")}
-            onClick={openDrawer}
+            // onClick={openDrawer}
           >
             <Bars3Icon className="h-5 w-5 text-black" />
           </button>
