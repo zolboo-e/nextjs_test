@@ -1,12 +1,12 @@
 //
 import { ArrowDownTrayIcon } from "@heroicons/react/24/solid";
-import type { NextPageWithLayout } from "next";
+import type { NextPage } from "next";
 import Link from "next/link";
 
 //
 import { classNames } from "common/utils";
 
-const SettingsPage: NextPageWithLayout = () => {
+function SettingsPage() {
   return (
     <div className="flex flex-col gap-y-10">
       {items.map(({ key, children, title }) => (
@@ -34,7 +34,7 @@ const SettingsPage: NextPageWithLayout = () => {
       ))}
     </div>
   );
-};
+}
 export default SettingsPage;
 
 interface IItem {

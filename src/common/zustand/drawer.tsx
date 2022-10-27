@@ -1,4 +1,3 @@
-"use client";
 import { useCallback, useEffect, useState } from "react";
 import create from "zustand";
 
@@ -16,21 +15,23 @@ export const useDrawer = create<IDrawerState>((set) => ({
 }));
 
 export const CloseDrawerOnMobile: React.FCC = ({ children }) => {
-  const closeDrawer = useDrawer((state) => state.close);
+  // const closeDrawer = useDrawer((state) => state.close);
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const handleResize = useCallback(() => {
-    if (windowWidth < 640 && window.innerWidth >= 640) {
-      closeDrawer();
-    }
-    setWindowWidth(window.innerWidth);
-  }, [closeDrawer, windowWidth]);
+  // const [windowWidth, setWindowWidth] = useState(window?.innerWidth ?? 0);
+  // const handleResize = useCallback(() => {
+  //   if (window) {
+  //     if (windowWidth < 640 && window.innerWidth >= 640) {
+  //       closeDrawer();
+  //     }
+  //     setWindowWidth(window.innerWidth);
+  //   }
+  // }, [closeDrawer, windowWidth]);
 
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
+  // useEffect(() => {
+  //   window?.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("resize", handleResize);
-  }, [handleResize]);
+  //   return () => window?.removeEventListener("resize", handleResize);
+  // }, [handleResize]);
 
   return <>{children}</>;
 };

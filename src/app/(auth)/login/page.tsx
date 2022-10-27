@@ -1,8 +1,12 @@
-import { GoogleLogo, GTNLogo } from "common/assets";
-import { classNames } from "common/utils";
+//
+import type { NextPage } from "next";
 import Link from "next/link";
 
-const LoginPage: React.FC = () => {
+//
+import { GoogleLogo, GTNLogo } from "common/assets";
+import { classNames } from "common/utils";
+
+function LoginPage() {
   return (
     <div className="flex h-screen w-screen items-center justify-center px-10">
       <div className="flex w-full max-w-[400px] flex-col items-center gap-y-8 rounded-md border bg-white p-10">
@@ -29,5 +33,5 @@ const LoginPage: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 export default LoginPage;
