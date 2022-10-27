@@ -11,6 +11,7 @@ const RootLayout: React.FCC = ({ children }) => {
         <title>Next.js</title>
       </head>
       <body>
+        {/* {children} */}
         <CustomUserProvider>{children}</CustomUserProvider>
       </body>
     </html>

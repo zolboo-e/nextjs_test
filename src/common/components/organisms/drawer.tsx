@@ -6,54 +6,65 @@ import Image from "next/image";
 import Link from "next/link";
 
 //
-import { CloseDrawer } from "common/components";
 import { classNames } from "common/utils";
-// import { useDrawer } from "common/zustand";
 
 //
 import { items } from "./sidebar";
 
-export const Drawer: React.FC = () => {
+export const drawerKey = "my-drawer";
+export const Drawer: React.FCC = ({ children }) => {
   // const { user } = useUser();
-  // const isOpen = useDrawer((state) => state.isOpen);
 
   return (
-    <div
-      className={classNames(
-        "fixed z-0 -ml-[80vw] flex h-screen w-[80vw] flex-col bg-primary py-5 transition-margin duration-200"
-        // isOpen && "ml-0"
-      )}
-    >
-      <div className="flex items-center gap-x-2.5 px-2.5">
-        <div className="relative aspect-square w-12">
-          <Image
-            src="/assets/images/logo.png"
-            width={64}
-            height={64}
-            alt="gtn logo"
-          />
-        </div>
-        <div className="text-3xl font-medium text-white">{`Circle`}</div>
+    <div className="drawer">
+      <input id={drawerKey} type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content">{children}</div>
+      <div className="drawer-side">
+        <DrawerMenu />
       </div>
-      <ul className="flex flex-col">
-        {items.map(({ key, href, icon, title }) => (
-          <li key={key}>
-            <Link
-              href={href}
-              className={classNames(
-                "flex items-center gap-x-2.5 px-5 py-2.5 text-white",
-                "hover:bg-black/20"
-              )}
-            >
-              <div className="flex aspect-square w-8 items-center justify-center rounded-full bg-white/20">
-                <div className="w-4">{icon}</div>
-              </div>
-              <div className="text-xs">{title}</div>
-            </Link>
-          </li>
-        ))}
-      </ul>
-      {/* {user && (
+    </div>
+  );
+};
+
+const DrawerMenu: React.FC = () => {
+  return (
+    <>
+      <label htmlFor="my-drawer" className="drawer-overlay" />
+      <div
+        className={classNames(
+          "flex h-screen w-[80vw] flex-col bg-primary py-5"
+        )}
+      >
+        <div className="flex items-center gap-x-2.5 px-2.5">
+          <div className="relative aspect-square w-12">
+            <Image
+              src="/assets/images/logo.png"
+              width={64}
+              height={64}
+              alt="gtn logo"
+            />
+          </div>
+          <div className="text-3xl font-medium text-white">{`Circle`}</div>
+        </div>
+        <ul className="flex flex-col">
+          {items.map(({ key, href, icon, title }) => (
+            <li key={key}>
+              <Link
+                href={href}
+                className={classNames(
+                  "flex items-center gap-x-2.5 px-5 py-2.5 text-white",
+                  "hover:bg-black/20"
+                )}
+              >
+                <div className="flex aspect-square w-8 items-center justify-center rounded-full bg-white/20">
+                  <div className="w-4">{icon}</div>
+                </div>
+                <div className="text-xs">{title}</div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        {/* {user && (
         <div className="flex flex-col gap-y-2.5 px-5">
           <small className="text-white">{`その他`}</small>
           <div
@@ -75,7 +86,8 @@ export const Drawer: React.FC = () => {
           className={classNames("px-5 py-2.5 text-white", "hover:bg-black/20")}
         >{`ログアウト`}</Link>
       )} */}
-      {/* <CloseDrawer /> */}
-    </div>
+        {/* <CloseDrawer /> */}
+      </div>
+    </>
   );
 };

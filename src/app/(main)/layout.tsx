@@ -10,12 +10,10 @@ const MainLayout: React.FCC = ({ children }) => {
   // const closeDrawer = useDrawer((state) => state.close);
 
   return (
-    <div className="flex">
-      <Drawer />
+    <Drawer>
       <div
         className={classNames(
-          "z-10 grid h-screen w-screen grid-rows-[70px,1fr] bg-[#fafafa] transition-margin duration-200",
-          // isOpen && "ml-[80vw]",
+          "grid h-screen w-screen grid-rows-[70px,1fr] bg-[#fafafa]",
           "sm:grid-cols-[80px,1fr]"
         )}
       >
@@ -29,15 +27,8 @@ const MainLayout: React.FCC = ({ children }) => {
             </div>
           </div>
         </div>
-        {/* <div
-          className={classNames(
-            "absolute h-screen w-screen bg-black/20 transition-[opacity,visibility] duration-200"
-            isOpen ? "visible opacity-100" : "invisible opacity-0"
-          )}
-          onClick={closeDrawer}
-        /> */}
       </div>
-    </div>
+    </Drawer>
   );
 };
 
