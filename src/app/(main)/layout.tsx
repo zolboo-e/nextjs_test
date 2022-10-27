@@ -32,7 +32,7 @@ const MainLayout: React.FCC = ({ children }) => {
           </div>
           <div
             className={classNames(
-              "absolute h-screen w-screen bg-black/20 transition-opacity duration-200",
+              "absolute h-screen w-screen bg-black/20 transition-[opacity,visibility] duration-200",
               isOpen ? "visible opacity-100" : "invisible opacity-0"
             )}
             onClick={closeDrawer}
