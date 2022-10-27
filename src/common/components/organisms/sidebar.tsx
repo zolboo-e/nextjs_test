@@ -7,6 +7,7 @@ import {
 } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 //
 import { classNames } from "common/utils";
@@ -37,7 +38,7 @@ export const Sidebar: React.FC = () => {
         )}
       >
         <ul>
-          {items.map(({ key, href, icon, title }) => (
+          {sidebarItems.map(({ key, href, icon, title }) => (
             <li key={key}>
               <Link
                 href={href}
@@ -58,7 +59,14 @@ export const Sidebar: React.FC = () => {
     </>
   );
 };
-export const items = [
+
+export interface ISidebarItem {
+  key: string;
+  href: string;
+  icon: ReactNode;
+  title: string;
+}
+export const sidebarItems = [
   {
     key: "tickets",
     href: "/tickets",
