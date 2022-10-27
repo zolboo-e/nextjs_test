@@ -6,17 +6,24 @@ import { cookies } from "next/headers";
 import { decrypt } from "common/utils";
 import { backend } from "configs/default";
 
-const getData = async (): Promise<any[] | null> => {
+const getData = async (): Promise<{
+  teams: {
+    id: number;
+    code: number;
+    name: string;
+    members_count: number;
+    thumb: string;
+  }[];
+} | null> => {
   const _cookies = cookies();
   const session = _cookies.get("appSession");
-  console.log("session", session);
+
   if (!session) {
     return null;
   }
 
   const secret = process.env.AUTH0_SECRET!;
   const { accessToken } = await decrypt(session, secret);
-  console.log("accessToken", accessToken);
 
   const response = await fetch(`https://api.gtnapp.tokyo/teams`, {
     headers: {
@@ -24,10 +31,8 @@ const getData = async (): Promise<any[] | null> => {
       "X-API-KEY": "8D-E.dZs7xccC4",
     },
   });
-  const data = await response.json();
-  console.log("data", data);
 
-  return data;
+  return response.json();
 };
 
 async function TeamsPage() {
@@ -38,7 +43,7 @@ async function TeamsPage() {
       <div className="flex flex-col gap-y-10">
         <ul>
           {data &&
-            data.map((team, index) => (
+            data.teams.map((team, index) => (
               <li key={`team-${index}`}>{JSON.stringify(team)}</li>
             ))}
         </ul>
