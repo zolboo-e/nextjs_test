@@ -14,6 +14,14 @@ const nextConfig = {
         //   destination: `${process.env.NUXT_URL}/:path*`,
         // },
         {
+          source: "/settings",
+          destination: `/settings`,
+        },
+        {
+          source: "/login",
+          destination: `/login`,
+        },
+        {
           source: "/",
           destination: `${process.env.NUXT_URL}/`,
         },
