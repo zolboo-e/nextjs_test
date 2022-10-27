@@ -52,8 +52,8 @@ async function TeamsPage() {
         <table
           className={classNames(
             "table-auto border-collapse border px-10",
-            "[&>*>th]:py-4 [&>*>th]:px-8 [&>*>th]:text-left [&>*>th:first-child]:w-0 [&>*>th:first-child]:whitespace-nowrap",
-            "[&>*>td]:py-4 [&>*>td]:px-8 [&>*>td:first-child]:whitespace-nowrap"
+            "[&_th]:py-4 [&_th]:px-8 [&_th]:text-left [&_th:first-child]:w-0 [&_th:first-child]:whitespace-nowrap",
+            "[&_td]:py-4 [&_td]:px-8 [&_td:first-child]:whitespace-nowrap"
           )}
         >
           <thead>
