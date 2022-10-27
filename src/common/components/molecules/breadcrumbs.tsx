@@ -8,12 +8,12 @@ export const Breadcrumbs: React.FC = () => {
   return (
     <div
       className={classNames(
-        "container px-0",
-        segments.includes("(narrow)") && "max-w-[800px]"
+        "container px-0"
+        // segments.includes("(narrow)") && "max-w-[800px]"
       )}
     >
       <_Breadcrumbs
-        items={segments
+        items={["(main)", ...segments]
           .map(segmentToText)
           .filter((segment): segment is IBreadcrumbItem => !!segment)}
       />
@@ -51,7 +51,7 @@ const _Breadcrumbs: React.FC<IBreadcrumbs> = ({ items }) => {
 
 const segmentToText = (segment: string) => {
   switch (segment) {
-    case "(narrow)":
+    case "(main)":
       return {
         key: "root",
         href: "/",
