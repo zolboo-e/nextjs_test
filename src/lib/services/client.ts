@@ -1,33 +1,12 @@
 //
-import { initClient, initContract } from "@ts-rest/core";
+import { initClient } from "@ts-rest/core";
 import { cookies } from "next/headers";
-import { z } from "zod";
 
 //
 import { auth0, backend } from "configs/default";
+import { contract } from "lib/services";
 import { decrypt } from "lib/utils";
 
-const c = initContract();
-const contract = c.router({
-  getTeams: {
-    method: "GET",
-    path: "/teams",
-    responses: {
-      200: z.object({
-        teams: z
-          .object({
-            id: z.number(),
-            code: z.number(),
-            name: z.string(),
-            members_count: z.number(),
-            thumb: z.string().nullable(),
-          })
-          .array(),
-      }),
-    },
-    summary: "Get teams",
-  },
-});
 export const client = initClient(contract, {
   baseUrl: backend.baseUrl,
   baseHeaders: {
