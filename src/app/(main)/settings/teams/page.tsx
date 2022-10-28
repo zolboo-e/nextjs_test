@@ -19,9 +19,17 @@ async function TeamsPage() {
         <div className="flex items-center justify-between">
           <div className="flex gap-x-2">
             <input className="input w-[300px]" placeholder="チーム名で検索" />
-            <Link href="/" className="btn-primary btn">{`検索`}</Link>
+            <Link
+              href="/"
+              prefetch={false}
+              className="btn-primary btn"
+            >{`検索`}</Link>
           </div>
-          <Link href="/" className="btn-primary btn">{`チームの登録`}</Link>
+          <Link
+            href="/"
+            prefetch={false}
+            className="btn-primary btn"
+          >{`チームの登録`}</Link>
         </div>
         <table
           className={classNames(

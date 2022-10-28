@@ -45,7 +45,9 @@ const _Breadcrumbs: React.FC<IBreadcrumbs> = ({ items }) => {
 
           return (
             <li key={key}>
-              <Link href={href}>{title}</Link>
+              <Link href={href} prefetch={false}>
+                {title}
+              </Link>
             </li>
           );
         })}
