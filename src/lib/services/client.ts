@@ -29,10 +29,6 @@ const contract = c.router({
   },
 });
 export const client = initClient(contract, {
-  // baseUrl: "https://api.gtnapp.tokyo",
-  // baseHeaders: {
-  //   "X-API-KEY": "8D-E.dZs7xccC4",
-  // },
   baseUrl: backend.baseUrl,
   baseHeaders: {
     "X-API-KEY": backend.apiKey,
@@ -54,6 +50,6 @@ export const client = initClient(contract, {
       },
     });
 
-    return response.json();
+    return { status: response.status, body: await response.json() };
   },
 });
