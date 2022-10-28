@@ -17,6 +17,7 @@ function SettingsPage() {
                 <li key={key}>
                   <Link
                     href={href}
+                    prefetch={false}
                     className={classNames(
                       "flex gap-x-5 border bg-white px-8 py-5",
                       "hover:bg-black/5"

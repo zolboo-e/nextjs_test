@@ -17,6 +17,7 @@ export const Sidebar: React.FC = () => {
     <>
       <Link
         href="/"
+        prefetch={false}
         className={classNames(
           "hidden items-center justify-center bg-[#c62f37]",
           "sm:flex"
@@ -42,6 +43,7 @@ export const Sidebar: React.FC = () => {
             <li key={key}>
               <Link
                 href={href}
+                prefetch={false}
                 className={classNames(
                   "flex aspect-square w-full flex-col items-center justify-center gap-y-2 text-white",
                   "hover:bg-black/20"

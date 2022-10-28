@@ -18,6 +18,7 @@ export const DrawerItem: React.FC<Omit<ISidebarItem, "key">> = ({
   return (
     <Link
       href={href}
+      prefetch={false}
       className={classNames(
         "flex items-center gap-x-2.5 px-5 py-2.5 text-white",
         "hover:bg-black/20"
