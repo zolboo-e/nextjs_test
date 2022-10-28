@@ -4,9 +4,9 @@
 import Link from "next/link";
 
 //
-import { drawerId } from "common/components";
-import type { ISidebarItem } from "common/components";
-import { classNames } from "common/utils";
+import { drawerId } from "lib/components";
+import type { ISidebarItem } from "lib/components";
+import { classNames } from "lib/utils";
 
 //
 

@@ -8,9 +8,9 @@ import Link from "next/link";
 // import { useRef } from "react";
 
 //
-import { drawerId } from "common/components";
-import { classNames } from "common/utils";
-// import { useDrawer } from "common/zustand";
+import { drawerId } from "lib/components";
+import { classNames } from "lib/utils";
+// import { useDrawer } from "lib/zustand";
 
 export const Header: React.FC = () => {
   // const openDrawer = useDrawer((state) => state.open);

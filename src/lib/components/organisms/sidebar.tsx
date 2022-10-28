@@ -10,7 +10,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 //
-import { classNames } from "common/utils";
+import { classNames } from "lib/utils";
 
 export const Sidebar: React.FC = () => {
   return (

@@ -8,15 +8,15 @@ export const config = {
 };
 const authRoutes: string[] = ["/login"];
 export const middleware: NextMiddleware = async (request) => {
-  let response: NextResponse | undefined;
+  // let response: NextResponse | undefined;
 
-  // auth routes
-  response = checkAuthRoutes(request);
-  if (response) return response;
+  // // auth routes
+  // response = checkAuthRoutes(request);
+  // if (response) return response;
 
-  // protected routes
-  response = checkProtectedRoutes(request);
-  if (response) return response;
+  // // protected routes
+  // response = checkProtectedRoutes(request);
+  // if (response) return response;
 
   return NextResponse.next();
 };

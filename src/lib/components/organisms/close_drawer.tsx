@@ -4,7 +4,7 @@
 import { useCallback, useEffect, useState } from "react";
 
 //
-import { drawerId } from "common/components";
+import { drawerId } from "lib/components";
 
 export const CloseDrawer: React.FC = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);

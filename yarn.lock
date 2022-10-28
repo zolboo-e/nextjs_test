@@ -229,6 +229,11 @@
   dependencies:
     defer-to-connect "^2.0.0"
 
+"@ts-rest/core@^3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@ts-rest/core/-/core-3.6.0.tgz#da56bedf57ee753dc3df0fd7777efa7e4ff1845e"
+  integrity sha512-h7YC0v7c+/mOL6xwBJPEefXBjPJk7+oW1nnv1hqlTYunOqZnVNlfG1niwnc75f7iVVcFWFRRgIKa26oewY85PQ==
+
 "@types/cacheable-request@^6.0.1":
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/@types/cacheable-request/-/cacheable-request-6.0.2.tgz#c324da0197de0a98a2312156536ae262429ff6b9"
@@ -2695,6 +2700,11 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zod@^3.19.1:
+  version "3.19.1"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-3.19.1.tgz#112f074a97b50bfc4772d4ad1576814bd8ac4473"
+  integrity sha512-LYjZsEDhCdYET9ikFu6dVPGp2YH9DegXjdJToSzD9rO6fy4qiRYFoyEYwps88OseJlPyl2NOe2iJuhEhL7IpEA==
 
 zustand@^4.1.3:
   version "4.1.3"

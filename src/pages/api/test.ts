@@ -2,8 +2,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 //
-import { decrypt } from "common/utils";
 import { auth0 } from "configs/default";
+import { decrypt } from "lib/utils";
 
 export default async function handler(
   req: NextApiRequest,

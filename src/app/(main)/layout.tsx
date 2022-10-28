@@ -1,8 +1,8 @@
 // "use client";
 
 //
-import { Breadcrumbs, Drawer, Header, Sidebar } from "common/components";
-import { classNames } from "common/utils";
+import { Breadcrumbs, Drawer, Header, Sidebar } from "lib/components";
+import { classNames } from "lib/utils";
 
 const MainLayout: React.FCC = ({ children }) => {
   return (

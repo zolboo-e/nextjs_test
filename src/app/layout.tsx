@@ -2,7 +2,7 @@
 import "tailwindcss/tailwind.css";
 
 //
-import { CustomUserProvider } from "common/components";
+import { CustomUserProvider } from "lib/components";
 
 const RootLayout: React.FCC = ({ children }) => {
   return (

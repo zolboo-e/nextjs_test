@@ -2,8 +2,8 @@
 import Link from "next/link";
 
 //
-import { GoogleLogo, GTNLogo } from "common/assets";
-import { classNames } from "common/utils";
+import { GoogleLogo, GTNLogo } from "lib/assets";
+import { classNames } from "lib/utils";
 
 function LoginPage() {
   return (

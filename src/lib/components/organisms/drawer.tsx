@@ -5,8 +5,8 @@
 import Image from "next/image";
 
 //
-import { CloseDrawer, DrawerItem, sidebarItems } from "common/components";
-import { classNames } from "common/utils";
+import { CloseDrawer, DrawerItem, sidebarItems } from "lib/components";
+import { classNames } from "lib/utils";
 
 export const drawerId = "my-drawer";
 export const Drawer: React.FCC = ({ children }) => {

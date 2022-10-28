@@ -3,7 +3,7 @@ import { ArrowDownTrayIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 
 //
-import { classNames } from "common/utils";
+import { classNames } from "lib/utils";
 
 function SettingsPage() {
   return (
