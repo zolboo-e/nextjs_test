@@ -4,8 +4,10 @@ import { cookies } from "next/headers";
 
 //
 import { auth0, backend } from "configs/default";
-import { contract } from "lib/services";
 import { decrypt } from "lib/utils";
+
+//
+import { contract } from "./contract";
 
 export const client = initClient(contract, {
   baseUrl: backend.baseUrl,
