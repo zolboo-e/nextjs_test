@@ -3,7 +3,7 @@ import { initContract } from "@ts-rest/core";
 import { z } from "zod";
 
 const c = initContract();
-export const contract = c.router({
+const teamsContract = c.router({
   getTeams: {
     method: "GET",
     path: "/teams",
@@ -22,4 +22,8 @@ export const contract = c.router({
     },
     summary: "Get teams",
   },
+});
+
+export const contract = c.router({
+  teams: teamsContract,
 });

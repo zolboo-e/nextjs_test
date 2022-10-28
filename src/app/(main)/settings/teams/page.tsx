@@ -1,44 +1,12 @@
 //
-
-import { cookies } from "next/headers";
 import Link from "next/link";
 
 //
-import { auth0, backend } from "configs/default";
 import { client } from "lib/services";
-import { classNames, decrypt } from "lib/utils";
-
-// const getData = async (): Promise<{
-//   teams: {
-//     id: number;
-//     code: number;
-//     name: string;
-//     members_count: number;
-//     thumb: string | null;
-//   }[];
-// }> => {
-//   const _cookies = cookies();
-//   const session = _cookies.get("appSession");
-
-//   if (!session) {
-//     throw Error("NOT_AUTHORIZED");
-//   }
-
-//   const { accessToken } = await decrypt(session, auth0.secret);
-
-//   const response = await fetch(`${backend.baseUrl}/teams`, {
-//     headers: {
-//       authorization: `Bearer ${accessToken}`,
-//       "X-API-KEY": backend.apiKey,
-//     },
-//   });
-
-//   return response.json();
-// };
+import { classNames } from "lib/utils";
 
 async function TeamsPage() {
-  // const data = await getData();
-  const { body, status } = await client.getTeams({});
+  const { body, status } = await client.teams.getTeams({});
 
   if (status !== 200) {
     return status;
