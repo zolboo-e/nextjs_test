@@ -7,9 +7,9 @@ import { auth0, backend } from "configs/default";
 import { decrypt } from "lib/utils";
 
 //
-import { contract } from "./contract";
+import { appContract } from "./contracts";
 
-export const client = initClient(contract, {
+export const client = initClient(appContract, {
   baseUrl: backend.baseUrl,
   baseHeaders: {
     "X-API-KEY": backend.apiKey,
